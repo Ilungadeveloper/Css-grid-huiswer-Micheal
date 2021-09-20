@@ -1,1 +1,75 @@
-/*Maak hier jouw CSS!*/
+/*!*Maak hier jouw CSS!*!*/
+/*Dit gelt voor mobiele apparaten*/
+.container {
+    background-color: #ffeedb;
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+    grid-template-areas: "header-a"
+                         "content-b"
+                         "content-c"
+                          "aside-d"
+                         "content-e"
+                         "leeg-g"
+                         "footer-f";
+}
+
+div {
+    font-size:12px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#ffffff;
+}
+
+.grid-item {
+    background-color: #ba3a44;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.grid-header-A {
+    grid-area: header-a;
+}
+
+.grid-content-B {
+    grid-area: content-b;
+}
+
+.grid-content-C {
+    grid-area: content-c;
+}
+
+.grid-aside-D {
+    grid-area: aside-d;
+}
+
+.grid-content-E {
+    grid-area: content-e;
+}
+
+.grid-footer-F {
+    grid-area: footer-f;
+}
+
+/*.grid-aside-leeg-G {*/
+/*    grid-area: leeg-g;*/
+/*}*/
+
+/*Alles wat hier staat is voor apparaten die groter zijn dan mobiel*/
+
+@media screen and (min-width: 576px) {
+    .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px 190px 100px auto 50px;
+        grid-template-areas: "header-a content-c content-c"
+                         "content-b content-c content-c"
+                         "content-b content-e aside-d"
+                         "content-b content-e leeg-g"
+                         "footer-f footer-f footer-f";
+    }
+}
+
